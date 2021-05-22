@@ -20,6 +20,9 @@ export const productSlice = createSlice({
         addtocart : (state,action)=>{
        state.cart.push(action.payload)
        state.total += action.payload.price
+      },
+      updatecart : (state,action)=>{
+          state.cart = action.payload
       }
 
   },
@@ -38,6 +41,6 @@ export const productSlice = createSlice({
   }
 })
 // Action creators are generated for each case reducer function
-export const {addtocart } = productSlice.actions
+export const {addtocart ,updatecart} = productSlice.actions
 
 export default productSlice.reducer

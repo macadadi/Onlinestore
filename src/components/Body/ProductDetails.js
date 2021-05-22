@@ -4,23 +4,31 @@ import { Col, Row } from 'reactstrap'
 import Checkout from './Checkout'
 import './productdetails.css'
 
-function ProductDetails() {
+function ProductDetails({tooggleIsOpen }) {
     const cart = useSelector(state=>state.products)
+    let total=0;
 
+    const culcTotal =()=>{
+     cart.cart.map((product)=>{
+         total += parseFloat(product.price)
+          console.log('total is ',total)
+      })
+    }
 
+    culcTotal()
  
     return (
         <div className='popup'>
         <div className='box'>
-          
+          { console.log('total is two ',total)}
             <div className='checkout-body'>
            
                 <Row>
                 <Col  md="6" className='checkout-left'>
                 <h1>Checkout</h1>
-                    {cart.cart && cart.cart.map((product,index)=> <Checkout key={index} title={product.title}  price={product.price}/>)}
+                    {cart.cart && cart.cart.map((product,index)=> <Checkout key={index} title={product.title}  price={product.price} id={product.id}/>)}
                     <div className='checkout-total'>
-                   <h4>TOTAL :</h4> <h5> ksh. {cart.total.toFixed(2)}</h5> 
+                   <h4>TOTAL :</h4> <h5> ksh. {total.toFixed(2)}</h5> 
                    </div>
                </Col> 
                <Col  md="6" className='checkout-right'>
@@ -54,7 +62,7 @@ function ProductDetails() {
                </Row>
                <div className='submit-btn-div'>
                <button className='btn-confirm'>Confirm</button>
-               <button className='btn-cancel' >Cancel</button>
+               <button className='btn-cancel' onClick={tooggleIsOpen }>Cancel</button>
                </div>
            </div>
         </div>

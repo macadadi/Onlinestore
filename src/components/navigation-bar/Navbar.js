@@ -30,7 +30,7 @@ function Header() {
    {cart.length < 1 ? `Empty` : cart.length === 1 ? `${cart.length} item` : `${cart.length} items`} </NavbarText>
         </div>
       </Navbar>
-      <div>{isOpen && <ProductDetails />}</div>
+      <div>{isOpen && <ProductDetails tooggleIsOpen={tooggleIsOpen}/>}</div>
       </>
       
     )
