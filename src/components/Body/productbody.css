@@ -1,0 +1,28 @@
+.product-main{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+/*single-product*/
+.single-prod{
+width: 400px;
+margin: 10px;
+padding: 10px;
+background-color:white;
+border-radius: 10px;
+}
+
+.single-prod > h3,h4{
+    font-weight: 700;
+}
+.single-prod h4{
+    font-weight: 700;
+}
+.single-prod  img{
+    width: 200px;
+    margin: 5px 10px;
+
+}
