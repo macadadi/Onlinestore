@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { addtocart } from '../../features/productSlice'
 
 function Singleproduct({title,price,description,category,imgUrl,id}) {
     const dispatch =useDispatch()
-    const [cart,setCart] = useState([])
+    const cart = useSelector(state=>state.products)
 
+ 
     const handleclick =()=>{
-        const db = {
-             title,price,description
-         }
-       dispatch(addtocart(JSON.stringify(db))) 
+
+        console.log(cart.cart)
+       dispatch(addtocart({id,title,price,description,category,imgUrl})) 
         
     }
   
@@ -18,7 +18,6 @@ function Singleproduct({title,price,description,category,imgUrl,id}) {
             <div className='single-prod'  onClick={handleclick}>
             {/* {id title price description category image }*/}
          <h3>{category}</h3>
-         <i class="fas fa-cart-plus">g</i>
         <h5>{title}</h5>
             <center>
         <img src={imgUrl}/>

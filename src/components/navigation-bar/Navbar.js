@@ -1,40 +1,37 @@
 import './navbar.css'
 import React, { useState } from 'react';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   NavbarText
 } from 'reactstrap';
 import { useSelector } from 'react-redux';
+import ProductDetails from '../Body/ProductDetails';
 function Header() {
-  const total= useSelector(state=>state.products.cart)
-  const count = total.split('}')
-const [isOpen, setIsOpen] = useState(false);
+  const cart = useSelector(state=>state.products.cart)
+  const [isOpen,setIsOpen]=useState(false)
 
-  const toggle = () => setIsOpen(!isOpen);
+  const tooggleIsOpen=()=>{
+    setIsOpen(!isOpen)
+    console.log('you clicked',isOpen)
+  }
+
+  
+
+
+
     return (
-        
+        <>
         <Navbar color="light" light expand="md"  className='navbar-main sticky-top'>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
-        <NavbarText onClick={e=>console.log('you clicked')}>{count.length-1}</NavbarText>
+        <NavbarBrand href="/">Online Shop</NavbarBrand>
+        <div className="cart-stick">
+   <NavbarText onClick={tooggleIsOpen}><ShoppingCartIcon/> 
+   {cart.length < 1 ? `Empty` : cart.length === 1 ? `${cart.length} item` : `${cart.length} items`} </NavbarText>
+        </div>
       </Navbar>
+      <div>{isOpen && <ProductDetails />}</div>
+      </>
       
     )
 }

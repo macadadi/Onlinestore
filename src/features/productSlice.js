@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { original } from 'immer'
 
 
 
@@ -9,15 +10,16 @@ export const fetchdata = createAsyncThunk('product/fetchproduct', async()=>{
  const initialState ={
     status : 'finished',
     stock : {},
-    cart :''
+    cart :[],
+    total : 0
 }
 export const productSlice = createSlice({
   name: 'product',
   initialState: initialState,
   reducers: {
         addtocart : (state,action)=>{
-       state.cart +=(action.payload) 
-            
+       state.cart.push(action.payload)
+       state.total += action.payload.price
       }
 
   },
@@ -27,14 +29,14 @@ export const productSlice = createSlice({
       },
       [fetchdata.fulfilled] : (state,action)=>{
           state.status = 'fulfilled'
-          state.stock = action.payload 
+          state.stock = action.payload
+        
       },
       [fetchdata.rejected] :(state,action)=>{
           state.status = 'rejected'
       }
   }
 })
-
 // Action creators are generated for each case reducer function
 export const {addtocart } = productSlice.actions
 
