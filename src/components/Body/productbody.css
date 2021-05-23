@@ -6,6 +6,29 @@
     background-color: whitesmoke;
 }
 
+/* btns for adding to cart and vieewing details*/
+.view-detail-btn{
+    margin-right: 10px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(140, 179, 140);
+    border-radius: 10px;
+}
+.add-to-cart-btn{
+    margin-left: 10px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(238, 165, 29);
+    border-radius: 10px;  
+}
+.rm-fr-cart-btn{
+    margin-left: 10px;
+    border: none;
+    padding: 10px;
+    background-color:rgb(238, 36, 36);
+    border-radius: 10px;    
+}
+
 /*single-product*/
 .single-prod{
 width: 400px;

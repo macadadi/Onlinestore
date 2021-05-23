@@ -36,24 +36,24 @@ function ProductDetails({tooggleIsOpen }) {
                       <div className='card-input'>
                           <div>
                               <h5>CARD HOLDER</h5>
-                              <input type='text'  placeholder='Card Holder'/>
+                              <input type='text'  placeholder='Card Holder' required/>
                           </div>
                           <div>
                               <h5>EXPIRATION DATE</h5>
                               <div className='card-date'>
-                              <input type='text'  placeholder='MM'/>
-                              <input type='text'  placeholder='YY'/>
+                              <input type='text'  placeholder='MM' required/>
+                              <input type='text'  placeholder='YY' required/>
                               </div>
                           </div>
                       </div>
                       <div className='card-input'>
                           <div>
                               <h5>CARD NUMBER</h5>
-                              <input type='text'  placeholder='Card Number'/>
+                              <input type='text'  placeholder='Card Number'required/>
                           </div>
                           <div>
                               <h5 >cvc</h5>
-                              <input className='card-date' type='text'  placeholder='cvc'/>
+                              <input className='card-date' type='text'  placeholder='cvc' required/>
                           </div>
                       </div>
                    </div>
@@ -62,7 +62,7 @@ function ProductDetails({tooggleIsOpen }) {
                </Row>
                <div className='submit-btn-div'>
                <button className='btn-confirm'>Confirm</button>
-               <button className='btn-cancel' onClick={tooggleIsOpen }>Cancel</button>
+               <button className='btn-cancel' onClick={tooggleIsOpen }>Back</button>
                </div>
            </div>
         </div>
