@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {  updatecart } from '../../features/productSlice'
 
-function Checkout({title,price,id}) {
+function Checkout({title,price,id,tooggleIsOpen}) {
     const dispatch = useDispatch()
     const oldCart = useSelector(state=>state.products.cart)
     const handledelete=()=>{
@@ -12,7 +12,8 @@ function Checkout({title,price,id}) {
     return (
         <div className='checkout-prop'>
            <h4>{title}</h4> <p>{price}</p>
-           <button className='delete-btn' onClick={handledelete}>X</button>
+          {/* I had to remove this batton to remove some bags
+          <button className='delete-btn' onClick={handledelete}>X</button> */}
         </div>
     )
 }

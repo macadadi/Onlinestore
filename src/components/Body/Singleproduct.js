@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addtocart, updatecart } from '../../features/productSlice'
 
 function Singleproduct({title,price,description,category,imgUrl,id}) {
     const dispatch =useDispatch()
+    const [showbtn,setShowbtn] = useState(true)
     
     const oldCart = useSelector(state=>state.products.cart)
     const handledelete=()=>{
         let newCart = oldCart.filter((q)=>q.id !== id)
         dispatch(updatecart(newCart))
+        setShowbtn(true)
     }
 
  
     const handleclick =()=>{
-
-       dispatch(addtocart({id,title,price,description,category,imgUrl})) 
         
+       dispatch(addtocart({id,title,price,description,category,imgUrl})) 
+        setShowbtn(false)
     }
   
     return (
@@ -30,8 +32,8 @@ function Singleproduct({title,price,description,category,imgUrl,id}) {
         <p>{description.substring(0,60)}</p> 
         <div>
             <button className='view-detail-btn'>View Details</button>
-            <button className='add-to-cart-btn' onClick={handleclick}>Add to Cart</button>
-            <button className='rm-fr-cart-btn' onClick={handledelete}>Remove from Cart</button>
+         {showbtn ?    <button className='add-to-cart-btn' onClick={handleclick}>Add to Cart</button> : 
+                      <button className='rm-fr-cart-btn' onClick={handledelete}>Remove from Cart</button> }
         </div>
     </div>
     )

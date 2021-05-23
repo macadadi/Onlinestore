@@ -10,11 +10,13 @@ function ProductDetails({tooggleIsOpen }) {
 
     const culcTotal =()=>{
      cart.cart.map((product)=>{
-         total += parseFloat(product.price)
-          console.log('total is ',total)
-      })
+         total += parseFloat(product.price)})
+         if(total > 0 ){
+            
+            console.log(' test passed')
+        }
     }
-
+    
     culcTotal()
  
     return (
@@ -26,7 +28,7 @@ function ProductDetails({tooggleIsOpen }) {
                 <Row>
                 <Col  md="6" className='checkout-left'>
                 <h1>Checkout</h1>
-                    {cart.cart && cart.cart.map((product,index)=> <Checkout key={index} title={product.title}  price={product.price} id={product.id}/>)}
+                    {cart.cart && cart.cart.map((product,index)=> <Checkout tooggleIsOpen={tooggleIsOpen} key={index} title={product.title}  price={product.price} id={product.id}/>)}
                     <div className='checkout-total'>
                    <h4>TOTAL :</h4> <h5> ksh. {total.toFixed(2)}</h5> 
                    </div>
