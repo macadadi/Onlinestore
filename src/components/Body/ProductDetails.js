@@ -12,8 +12,6 @@ function ProductDetails({tooggleIsOpen }) {
      cart.cart.map((product)=>{
          total += parseFloat(product.price)})
          if(total > 0 ){
-            
-            console.log(' test passed')
         }
     }
     
@@ -22,7 +20,6 @@ function ProductDetails({tooggleIsOpen }) {
     return (
         <div className='popup'>
         <div className='box'>
-          { console.log('total is two ',total)}
             <div className='checkout-body'>
            
                 <Row>
@@ -30,7 +27,7 @@ function ProductDetails({tooggleIsOpen }) {
                 <h1>Checkout</h1>
                     {cart.cart && cart.cart.map((product,index)=> <Checkout tooggleIsOpen={tooggleIsOpen} key={index} title={product.title}  price={product.price} id={product.id}/>)}
                     <div className='checkout-total'>
-                   <h4>TOTAL :</h4> <h5> ksh. {total.toFixed(2)}</h5> 
+                   <h4>TOTAL :</h4> <h5> ksh. {(total*100).toFixed(2) }</h5> 
                    </div>
                </Col> 
                <Col  md="6" className='checkout-right'>

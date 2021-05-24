@@ -1,0 +1,29 @@
+.main-single-item{
+ height: 100vh;
+ background-color: transparent;
+ position: fixed;
+ top: 0px;
+ right: 0px;
+ width: 100%;
+}
+.single-item{
+    background-color:white;
+    width: 70%;
+    margin: 0 auto;
+    overflow: auto;
+    margin-top: calc(100vh - 85vh - 30px);
+    padding: 20px;
+    border-radius: 6px;
+
+}
+
+img{
+    width: 200px;
+    margin: 10px auto;
+}
+.continue-shopping-btn{
+    border: none;
+    padding: 10px;
+    background-color: rgb(116, 224, 116);
+    border-radius: 10px;
+}

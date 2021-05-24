@@ -11,7 +11,7 @@ function Checkout({title,price,id,tooggleIsOpen}) {
     }
     return (
         <div className='checkout-prop'>
-           <h4>{title}</h4> <p>{price}</p>
+           <h4>{title}</h4> <p>{price*100}</p>
           {/* I had to remove this batton to remove some bags
           <button className='delete-btn' onClick={handledelete}>X</button> */}
         </div>
