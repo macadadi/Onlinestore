@@ -49,3 +49,10 @@ border-radius: 10px;
     margin: 5px 10px;
 
 }
+
+/* div for the spiner*/
+.spin-dv{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

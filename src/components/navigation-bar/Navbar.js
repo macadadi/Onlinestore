@@ -27,7 +27,8 @@ function Header() {
         <NavbarBrand href="/">Online Shop</NavbarBrand>
         <div className="cart-stick">
    <NavbarText onClick={tooggleIsOpen}><ShoppingCartIcon/> 
-   {cart.length < 1 ? `Empty` : cart.length === 1 ? `${cart.length} item` : `${cart.length} items`} </NavbarText>
+   {cart.length < 1 ? `Empty` : cart.length === 1 ? `${cart.length} item   Checkout` : `${cart.length} items 
+    Checkout`} </NavbarText>
         </div>
       </Navbar>
       <div>{isOpen && cart.length > 0 && <ProductDetails tooggleIsOpen={tooggleIsOpen}/>}</div>
