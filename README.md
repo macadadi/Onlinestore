@@ -7,8 +7,8 @@ Viewing single product details,
 Adding and removing  Items from cart, viewing 
 Cart content and checking out
 
-Check live demo.\
-Here [online store]( https://onlinestore-bca9f.web.app ) .
+Check live demo 
+here: [online store]( https://onlinestore-bca9f.web.app ) .
 
 
 
