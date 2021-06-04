@@ -5,13 +5,25 @@
  top: 0px;
  right: 0px;
  width: 100%;
+ overflow-x: auto;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-single-item::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .main-single-item {
+    -ms-overflow-style: none;
+  }
+
+  
 .single-item{
     background-color:white;
     width: 70%;
     margin: 0 auto;
     overflow: auto;
-    margin-top: calc(100vh - 85vh - 30px);
+    margin-top: calc(100vh - 85vh - 40px);
     padding: 20px;
     border-radius: 6px;
 
